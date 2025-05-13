@@ -60,7 +60,6 @@ const cardData = [
     }
 ];
 
-
 // Funções ordenadas em ordem alfabética:
 
 async function checkDuelResults(playerCardId, computerCardId) {
