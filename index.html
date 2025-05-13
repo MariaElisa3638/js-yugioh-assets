@@ -22,16 +22,32 @@
     <!--main style-->
     <link rel="stylesheet" href="./src/styles/main.css">
 
+    <!--favicon-->
+    <link rel="shortcut icon" href="./src/assets/favicon/Favicon.ico" type="image/x-icon">
+
 
     <title>Yu-Gi-Oh Jo-ken-po Edition</title>
 </head>
 
 <body>
+    <audio id="bgm" loop><source src="./src/assets/audios/egyptian_duel.mp3" type="audio/mp3"></audio>
     <div class="bg-video">
         <video class="video" autoplay loop muted>
             <source src="./src/assets/video/yugi.mp4" type="video/mp4" />
         </video>
     </div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const bgm = document.getElementById("bgm");
+        // Tenta remover o mudo após 5 segundos
+        setTimeout(() => {
+            bgm.muted = false;
+            bgm.play().catch(err => console.error("Erro ao reproduzir bgm:", err));
+        }, 1000);
+    });
+</script>
+
+
     <div class="container">
         <div class="container_left framed-golden-2">
             <div class="score_box frame">
@@ -51,7 +67,7 @@
                 <div class="card-box framed" id="computer-cards">
                 </div>
 
-                <div class="card-versus_container">
+                <div class="card-versus_container debug">
                     <div class="versus-top">
                         <div class="card-infield">
                             <img id="player-field-card" height="180px" width="125px">
